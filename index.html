@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitácora de Investigación</title>
+  <style>
+    :root {
+      --bg-color: #0b1d33;
+      --text-color: #ffffff;
+      --accent-color: #d69e2e;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Encabezado y Navegación */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(11, 29, 51, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+    }
+
+    .brand {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #a0aec0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* Contenido Principal */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 35px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #cbd5e0;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #a0aec0;
+      margin-bottom: 30px;
+    }
+
+    /* Grid de Datos Informativos */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .info-card {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .info-card span.label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--accent-color);
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .info-card span.value {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      font-style: italic;
+    }
+
+    /* Desplegables de Investigación */
+    details {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    summary {
+      font-weight: bold;
+      color: #ffffff;
+      outline: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    summary::marker {
+      color: var(--accent-color);
+    }
+
+    details p {
+      margin-top: 15px;
+      margin-bottom: 0;
+      color: #cbd5e0;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #718096;
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado / Menú -->
+  <header>
+    <a href="#portada" class="brand">Bitácora Antimosquitos</a>
+    <nav>
+      <a href="#presentacion">Presentación</a>
+      <a href="#investigacion">Investigación</a>
+      <a href="#materiales">Materiales</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section id="portada" style="text-align: center;">
+      <p style="color: var(--accent-color); font-weight: bold;">PROYECTO DE INVESTIGACIÓN</p>
+      <h1>Uso adecuado del<br>repelente para mosquitos</h1>
+      <p class="subtitle">Proyecto realizado por estudiantes de Primero de Bachillerato General Unificado</p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="label">Estudiantes participantes</span>
+          <span class="value">[ Nombres de los estudiantes ]</span>
+        </div>
+        <div class="info-card">
+          <span class="label">Curso y paralelo</span>
+          <span class="value">[ Curso y sección ]</span>
+        </div>
+        <div class="info-card">
+          <span class="label">Docente responsable</span>
+          <span class="value">[ Nombre del docente ]</span>
+        </div>
+        <div class="info-card">
+          <span class="label">Fecha de realización</span>
+          <span class="value">[ Fecha ]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTACIÓN -->
+    <section id="presentacion">
+      <h2>Presentación del proyecto</h2>
+      <p>Este trabajo nació de una pregunta sencilla: casi todos usamos repelente alguna vez, pero, ¿en verdad sabemos usarlo bien? A partir de esa duda, decidimos investigar y consultar fuentes oficiales de salud para explicar de forma clara cómo protegernos correctamente.</p>
+      <p>Elegimos este tema porque en nuestra ciudad el clima favorece la presencia de mosquitos durante gran parte del año, convirtiendo al repelente en una herramienta esencial de prevención cotidiana.</p>
+    </section>
+
+    <!-- INVESTIGACIÓN -->
+    <section id="investigacion">
+      <h2>Preguntas Guía de Investigación</h2>
+
+      <details>
+        <summary>01. ¿Qué es un repelente?</summary>
+        <p>Es una sustancia que se aplica sobre la piel o ropa para alejar a los mosquitos. No los mata, sino que interfiere con su capacidad para detectarnos.</p>
+      </details>
+
+      <details>
+        <summary>02. ¿Cómo funciona?</summary>
+        <p>Contiene ingredientes activos como DEET o Icaridina que actúan bloqueando los receptores que los mosquitos usan para detectar el calor corporal y el sudor.</p>
+      </details>
+
+      <details>
+        <summary>03. ¿Cómo debe aplicarse correctamente?</summary>
+        <p>Se aplica en piel expuesta y ropa, evitando ojos, boca y heridas. Si usas protector solar, aplica primero el protector y después el repelente.</p>
+      </details>
+    </section>
+
+    <!-- MATERIALES -->
+    <section id="materiales">
+      <h2>Materiales del Proyecto</h2>
+      <p>• Repelentes comerciales y análisis de sus etiquetas.</p>
+      <p>• Computadores y dispositivos con acceso a internet para investigación.</p>
+      <p>• Fuentes bibliográficas de organismos de salud pública.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Bitácora de Investigación Escolar</p>
+  </footer>
+
+</body>
+</html>
