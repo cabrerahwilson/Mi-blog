@@ -6,137 +6,225 @@
     <title>Bitácora Antimosquitos | Liceo Naval de Guayaquil</title>
     <style>
         :root {
-            --primary-blue: #0b2545;
-            --accent-gold: #c59b27;
-            --mint-green: #10b981;
-            --bg-light: #0f172a;
-            --text-dark: #f8fafc;
-            --card-bg: #1e293b;
-            --border-color: #334155;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --navy-dark: #091a2b;
+            --header-bg: #0b2238;
+            --accent-gold: #c69214;
+            --bg-light: #f5f4ef;
+            --text-dark: #2c3e50;
+            --card-bg: #ffffff;
+            --mint-box: #e8f5e9;
+            --border-color: #e2e8f0;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Georgia', 'Segoe UI', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.6;
-            padding-bottom: 50px;
+            line-height: 1.7;
+            padding-bottom: 60px;
         }
 
+        /* Header / Navigation */
         header {
-            background-color: #071527;
+            background-color: var(--header-bg);
             color: white;
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
-        .header-title {
-            font-size: 1.2rem;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
             font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .logo-icon {
+            border: 1px solid var(--accent-gold);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 15px;
+            gap: 18px;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         nav a {
-            color: white;
+            color: #d1d5db;
             text-decoration: none;
             font-size: 0.9rem;
-            padding: 5px 10px;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
+        nav a:hover, nav a.active {
+            color: #ffffff;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 2px;
+        }
+
+        /* Main Container */
         .container {
-            max-width: 900px;
-            margin: 30px auto;
+            max-width: 1000px;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
+        /* Hero Banner */
         .hero {
-            background: linear-gradient(135deg, #0b2545 0%, #134074 100%);
+            background-color: var(--navy-dark);
             color: white;
-            padding: 40px;
-            border-radius: 12px;
+            padding: 45px 30px;
+            border-radius: 8px;
             text-align: center;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
+            margin-bottom: 35px;
+        }
+
+        .hero-tag {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            color: #f1f5f9;
+            font-size: 2.3rem;
+            font-weight: bold;
+            margin-bottom: 12px;
         }
 
-        .hero h2 {
-            font-size: 1.2rem;
-            color: var(--accent-gold);
-            font-weight: 400;
-            margin-bottom: 15px;
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: var(--shadow);
-        }
-
-        .card h3 {
-            color: var(--accent-gold);
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-        }
-
+        /* Metadata Cards */
         .meta-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 30px;
         }
 
-        .meta-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
+        .meta-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 6px;
             text-align: center;
         }
 
-        .meta-box h4 {
-            font-size: 0.9rem;
+        .meta-card h4 {
             color: var(--accent-gold);
-            margin-bottom: 8px;
+            font-size: 0.85rem;
             text-transform: uppercase;
+            margin-bottom: 6px;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        .meta-box p {
-            font-size: 1.1rem;
+        .meta-card p {
+            font-size: 1rem;
             font-weight: bold;
             color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
         }
 
+        /* Sections Structure */
+        section {
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        .section-tag {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--navy-dark);
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        /* Presentación Grid */
+        .presentacion-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .quote-box {
+            background-color: #eef7f2;
+            border: 1px solid #c8e6c9;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .quote-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #4caf50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #1b5e20;
+            margin-bottom: 12px;
+        }
+
+        .quote-author {
+            font-size: 0.85rem;
+            color: #558b2f;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Accordion for Section 02 */
         .accordion-item {
             border: 1px solid var(--border-color);
+            background: #ffffff;
             border-radius: 6px;
             margin-bottom: 10px;
             overflow: hidden;
@@ -145,21 +233,23 @@
         .accordion-header {
             width: 100%;
             text-align: left;
-            padding: 12px 15px;
-            background-color: #0f172a;
+            padding: 14px 18px;
+            background-color: #ffffff;
             border: none;
-            color: var(--text-dark);
+            color: var(--navy-dark);
             font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .accordion-content {
-            padding: 15px;
+            padding: 18px;
             display: none;
-            background-color: var(--card-bg);
+            background-color: #fafafa;
             border-top: 1px solid var(--border-color);
             font-size: 0.95rem;
         }
@@ -168,72 +258,80 @@
             display: block;
         }
 
-        blockquote {
-            background: rgba(197, 155, 39, 0.1);
-            border-left: 4px solid var(--accent-gold);
-            padding: 15px;
-            font-style: italic;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
+        /* Grid for Evidence & Products */
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
         }
 
-        .box-placeholder {
+        .card-box {
+            background: #ffffff;
             border: 1px solid var(--border-color);
-            padding: 15px;
-            text-align: center;
+            padding: 20px;
             border-radius: 8px;
-            color: #94a3b8;
-            background-color: rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        /* Scroll Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--navy-dark);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 1.2rem;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             font-size: 0.85rem;
-            color: #94a3b8;
+            color: #7f8c8d;
             border-top: 1px solid var(--border-color);
-            margin-top: 40px;
+            margin-top: 50px;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        ul, ol {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .product-detail {
-            margin-bottom: 15px;
-            background: rgba(255,255,255,0.02);
-            padding: 12px;
-            border-radius: 6px;
-        }
-
-        .product-detail strong {
-            color: var(--accent-gold);
-            display: block;
-            margin-bottom: 4px;
+        @media (max-width: 768px) {
+            .presentacion-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-title">
-            Bitácora Antimosquitos
+        <div class="logo-area">
+            <div class="logo-icon">🛡️</div>
+            <span>Bitácora Antimosquitos</span>
         </div>
         <nav>
             <ul>
                 <li><a href="#presentacion">Presentación</a></li>
                 <li><a href="#investigacion">Investigación</a></li>
                 <li><a href="#materiales">Materiales</a></li>
+                <li><a href="#evidencias">Evidencias</a></li>
+                <li><a href="#producto">Producto</a></li>
+                <li><a href="#opinion">Opinión</a></li>
+                <li><a href="#conclusiones">Conclusiones</a></li>
                 <li><a href="#fuentes">Fuentes</a></li>
             </ul>
         </nav>
@@ -242,221 +340,173 @@
     <div class="container">
 
         <!-- Banner Principal -->
-        <section class="hero">
-            <p style="text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); font-weight: bold; margin-bottom: 10px;">PROYECTO DE INVESTIGACIÓN</p>
+        <div class="hero">
+            <div class="hero-tag">PROYECTO DE INVESTIGACIÓN</div>
             <h1>Uso adecuado del repelente para mosquitos</h1>
-            <p style="margin-top: 5px;">Proyecto realizado por estudiantes de Primero de Bachillerato General Unificado</p>
+            <p>Proyecto realizado por estudiantes de Primero de Bachillerato General Unificado</p>
 
-            <!-- Recuadros con tus datos exactos -->
             <div class="meta-grid">
-                <div class="meta-box">
+                <div class="meta-card">
                     <h4>Estudiantes participantes</h4>
                     <p>Angel Cabrera</p>
                 </div>
-                <div class="meta-box">
+                <div class="meta-card">
                     <h4>Curso y paralelo</h4>
                     <p>1ero Bravo</p>
                 </div>
-                <div class="meta-box">
+                <div class="meta-card">
                     <h4>Docente responsable</h4>
                     <p>Ricardo Jimenez</p>
                 </div>
-                <div class="meta-box">
+                <div class="meta-card">
                     <h4>Fecha de realización</h4>
                     <p>21/10/2026</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Sección 01: Presentación del proyecto -->
+        <section id="presentacion">
+            <div class="section-tag">Sección 01</div>
+            <h2 class="section-title">Presentación del proyecto</h2>
+
+            <div class="presentacion-grid">
+                <div>
+                    <p>Este trabajo nació de una pregunta sencilla que nos hicimos en clase: casi todos usamos repelente alguna vez, pero, <em>¿en verdad sabemos usarlo bien?</em> A partir de esa duda, quienes formamos parte de Primero de Bachillerato decidimos investigar, comparar fuentes oficiales de salud y construir un material que explique, de forma clara, cómo protegernos correctamente de las picaduras de mosquitos.</p>
+                    <br>
+                    <p>Elegimos este tema porque Guayaquil es una ciudad cálida y húmeda, con lluvias que favorecen la presencia de mosquitos durante gran parte del año. Eso significa que el repelente no es un producto cualquiera: es una herramienta real de prevención que usamos —o deberíamos usar— de manera cotidiana, en casa, en el colegio y en actividades al aire libre.</p>
+                    <br>
+                    <p>Saber usarlo bien importa porque un producto mal aplicado pierde eficacia y puede generar riesgos innecesarios. Por eso nos propusimos consultar organismos de salud reconocidos, ordenar esa información y compartirla en un lenguaje que cualquier compañero, familia o vecino pueda entender sin necesidad de conocimientos médicos.</p>
+                </div>
+
+                <div class="quote-box">
+                    <div class="quote-icon">✓</div>
+                    <div class="quote-text">«Prevenir una picadura empieza por entender lo que estamos aplicando en nuestra piel.»</div>
+                    <div class="quote-author">Equipo de investigación, 1.º BGU</div>
+                </div>
+            </div>
         </section>
 
-        <!-- Sección 01: Presentación -->
-        <section id="presentacion" class="card">
-            <h3>Sección 01 · Presentación del proyecto</h3>
-            <p>Este trabajo nació de una pregunta sencilla que nos hicimos en clase: casi todos usamos repelente alguna vez, pero, ¿en verdad sabemos usarlo bien? A partir de esa duda, quienes formamos parte de Primero de Bachillerato decidimos investigar, comparar fuentes oficiales de salud y construir un material que explique, de forma clara, cómo protegernos correctamente de las picaduras de mosquitos.</p>
-            <br>
-            <p>Elegimos este tema porque Guayaquil es una ciudad cálida y húmeda, con lluvias que favorecen la presencia de mosquitos durante gran parte del año. Eso significa que el repelente no es un producto cualquiera: es una herramienta real de prevención que usamos en casa, en el colegio y en actividades al aire libre.</p>
-            
-            <blockquote>
-                «Prevenir una picadura empieza por entender lo que estamos aplicando en nuestra piel.»
-                <br><strong>— Equipo de investigación, 1.º BGU</strong>
-            </blockquote>
-        </section>
-
-        <!-- Sección 02: Conociendo el problema -->
-        <section id="investigacion" class="card">
-            <h3>Sección 02 · Conociendo el problema</h3>
-            <p style="margin-bottom: 15px;">Puntos clave de nuestra investigación (Haz clic para desplegar cada punto):</p>
+        <!-- Sección 02: Investigación -->
+        <section id="investigacion">
+            <div class="section-tag">Sección 02</div>
+            <h2 class="section-title">Conociendo el problema</h2>
 
             <div class="accordion-item">
                 <button class="accordion-header" onclick="toggleAccordion(this)">01. ¿Qué es un repelente? <span>+</span></button>
-                <div class="accordion-content">
-                    Un repelente de insectos es una sustancia que se aplica sobre la piel expuesta o sobre la ropa con el fin de alejar a mosquitos y otros insectos, dificultando que se posen o piquen. No mata al insecto: interfiere con su capacidad de detectarnos como fuente de alimento.
-                </div>
+                <div class="accordion-content">Un repelente de insectos es una sustancia que se aplica sobre la piel expuesta o sobre la ropa para alejar a los mosquitos. No los mata, sino que interfiere con su capacidad de detectarnos.</div>
             </div>
 
             <div class="accordion-item">
                 <button class="accordion-header" onclick="toggleAccordion(this)">02. ¿Para qué sirve? <span>+</span></button>
-                <div class="accordion-content">
-                    Sirve como una barrera de prevención frente a las picaduras y frente al riesgo de contraer enfermedades transmitidas por mosquitos como el dengue en zonas con presencia del vector.
-                </div>
+                <div class="accordion-content">Sirve como barrera de prevención contra picaduras y enfermedades transmitidas por vectores como el dengue.</div>
             </div>
 
             <div class="accordion-item">
                 <button class="accordion-header" onclick="toggleAccordion(this)">03. ¿Cómo funciona? <span>+</span></button>
-                <div class="accordion-content">
-                    Contienen ingredientes activos (como DEET, icaridina o IR3535) que actúan sobre los receptores con los que el mosquito detecta el calor corporal, el sudor y el dióxido de carbono que exhalamos.
-                </div>
+                <div class="accordion-content">Contiene principios activos (como DEET o Icaridina) que bloquean los receptores con los que los mosquitos huelen el sudor y el CO2.</div>
             </div>
 
             <div class="accordion-item">
                 <button class="accordion-header" onclick="toggleAccordion(this)">04. ¿Cómo debe aplicarse correctamente? <span>+</span></button>
-                <div class="accordion-content">
-                    <ul>
-                        <li>Aplicar sobre la piel expuesta y la ropa, evitando ojos, boca y heridas.</li>
-                        <li>Rociar primero en las manos si se trata de la cara.</li>
-                        <li>Si usa protector solar: aplique primero el protector solar y después el repelente.</li>
-                        <li>Lavar la piel con agua y jabón al no necesitar más protección.</li>
-                    </ul>
-                </div>
+                <div class="accordion-content">Aplicar sobre piel expuesta y ropa. Si usas bloqueador solar, aplica primero el bloqueador y 15 minutos después el repelente.</div>
             </div>
 
             <div class="accordion-item">
-                <button class="accordion-header" onclick="toggleAccordion(this)">05. ¿Qué precauciones deben tenerse? <span>+</span></button>
-                <div class="accordion-content">
-                    En bebés, niños pequeños y embarazadas, consultar previamente con un profesional de la salud antes de aplicar. Conservar el producto en su envase original lejos del alcance de niños.
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <button class="accordion-header" onclick="toggleAccordion(this)">06. ¿Qué errores deben evitarse? <span>+</span></button>
-                <div class="accordion-content">
-                    <ul>
-                        <li>Aplicar sobre heridas o quemaduras solares.</li>
-                        <li>Rociar en espacios cerrados y mal ventilados.</li>
-                        <li>Usar un producto sin registro sanitario visible.</li>
-                        <li>Reaplicar con más frecuencia de la indicada pensando que "protege más".</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <button class="accordion-header" onclick="toggleAccordion(this)">07. La importancia de leer la etiqueta <span>+</span></button>
-                <div class="accordion-content">
-                    La etiqueta indica el ingrediente activo, concentración, tiempo de protección y registro sanitario. Leerla antes de comprar y aplicar es uno de los hábitos más importantes.
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <button class="accordion-header" onclick="toggleAccordion(this)">08. Prevención vs. Tratamiento <span>+</span></button>
-                <div class="accordion-content">
-                    La prevención son acciones previas (usar repelente, eliminar agua estancada). El tratamiento son acciones médicas tras enfermar. El repelente es únicamente prevención.
-                </div>
+                <button class="accordion-header" onclick="toggleAccordion(this)">05. ¿Qué errores deben evitarse? <span>+</span></button>
+                <div class="accordion-content">Evitar aplicar sobre heridas, no rociar directo en la cara ni en espacios cerrados, y no usar productos sin registro sanitario.</div>
             </div>
         </section>
 
         <!-- Sección 03: Materiales -->
-        <section id="materiales" class="card">
-            <h3>Sección 03 · Materiales del proyecto</h3>
-            <ul>
-                <li>Repelente para mosquitos (Objeto principal de estudio)</li>
-                <li>Envases y etiquetas con registro sanitario</li>
-                <li>Computadores, celulares y acceso a Internet</li>
-                <li>Fuentes bibliográficas oficiales de salud</li>
-                <li>Cuadernos y fichas de investigación</li>
-            </ul>
+        <section id="materiales">
+            <div class="section-tag">Sección 03</div>
+            <h2 class="section-title">Materiales del proyecto</h2>
+            <div class="card-box">
+                <ul style="padding-left:20px;">
+                    <li>Repelente para mosquitos en aerosol/crema</li>
+                    <li>Envases con etiquetas e ingredientes visibles</li>
+                    <li>Dispositivos móviles y computadores con acceso a internet</li>
+                    <li>Fuentes oficiales (OMS, MSP del Ecuador, CDC)</li>
+                </ul>
+            </div>
         </section>
 
         <!-- Sección 04: Evidencias -->
-        <section class="card">
-            <h3>Sección 04 · Nuestra evidencia</h3>
+        <section id="evidencias">
+            <div class="section-tag">Sección 04</div>
+            <h2 class="section-title">Evidencias del proyecto</h2>
             <div class="grid-2">
-                <div class="box-placeholder">
-                    <strong>1. Investigación</strong>
-                    <p style="font-size:0.85rem; margin-top:5px;">[ Búsqueda de información y fuentes ]</p>
+                <div class="card-box" style="text-align:center; color:#7f8c8d;">
+                    <strong>1. Investigación</strong><br><br>[ Búsqueda de información ]
                 </div>
-                <div class="box-placeholder">
-                    <strong>2. Análisis</strong>
-                    <p style="font-size:0.85rem; margin-top:5px;">[ Análisis de etiquetas e ingredientes ]</p>
+                <div class="card-box" style="text-align:center; color:#7f8c8d;">
+                    <strong>2. Análisis</strong><br><br>[ Lectura de etiquetas ]
                 </div>
-                <div class="box-placeholder">
-                    <strong>3. Elaboración</strong>
-                    <p style="font-size:0.85rem; margin-top:5px;">[ Diseño y construcción del blog web ]</p>
+                <div class="card-box" style="text-align:center; color:#7f8c8d;">
+                    <strong>3. Elaboración</strong><br><br>[ Creación del sitio blog ]
                 </div>
-                <div class="box-placeholder">
-                    <strong>4. Socialización</strong>
-                    <p style="font-size:0.85rem; margin-top:5px;">[ Exposición y difusión del proyecto ]</p>
+                <div class="card-box" style="text-align:center; color:#7f8c8d;">
+                    <strong>4. Socialización</strong><br><br>[ Exposición al curso ]
                 </div>
             </div>
         </section>
 
-        <!-- Sección 05: Nuestro producto -->
-        <section class="card">
-            <h3>Sección 05 · Nuestro producto</h3>
-            
-            <div class="product-detail">
-                <strong>¿Qué producto desarrollaron?</strong>
-                <p>Sitio Web Blog Informativo y Guía Interactiva Digital.</p>
-            </div>
-
-            <div class="product-detail">
-                <strong>¿Cuál es su objetivo?</strong>
-                <p>Concienciar y educar a la comunidad educativa sobre la correcta aplicación de repelentes para evitar picaduras de mosquitos vectores del dengue.</p>
-            </div>
-
-            <div class="product-detail">
-                <strong>¿A quién está dirigido?</strong>
-                <p>Estudiantes, docentes, personal administrativo y familias de la comunidad del Liceo Naval de Guayaquil.</p>
-            </div>
-
-            <div class="product-detail">
-                <strong>¿Qué información contiene?</strong>
-                <p>Definición de repelentes, mecanismos de acción, precauciones de uso, orden correcto con el bloqueador solar, errores comunes y diferencia entre prevención y tratamiento.</p>
-            </div>
-
-            <div class="product-detail">
-                <strong>¿Cómo puede usarse en la comunidad educativa?</strong>
-                <p>A través de la difusión del enlace web en periódicos murales digitales, charlas informativas y redes internas de la institución.</p>
-            </div>
-
-            <div class="product-detail">
-                <strong>¿Qué aprendizaje obtuvieron al elaborarlo?</strong>
-                <p>Aprendimos a investigar en fuentes oficiales de salud (OMS, MSP), la importancia del trabajo en equipo y el manejo de herramientas digitales para la divulgación científica.</p>
+        <!-- Sección 05: Producto -->
+        <section id="producto">
+            <div class="section-tag">Sección 05</div>
+            <h2 class="section-title">Nuestro producto</h2>
+            <div class="card-box">
+                <p><strong>Producto:</strong> Blog Informativo Digital y Guía Interactiva.</p>
+                <p><strong>Objetivo:</strong> Promover el uso correcto del repelente en el Liceo Naval de Guayaquil.</p>
+                <p><strong>Público dirigido:</strong> Estudiantes, profesores y familias de la institución.</p>
             </div>
         </section>
 
         <!-- Sección 06: Opinión -->
-        <section class="card">
-            <h3>Sección 06 · Artículo de opinión</h3>
-            <h4 style="color: var(--accent-gold); margin-bottom: 10px;">Prevenir también es aprender</h4>
-            <p>En Guayaquil, el calor y las lluvias favorecen la presencia del mosquito <em>Aedes aegypti</em>. Usar repelente no es un detalle menor, sino una responsabilidad compartida. La prevención empieza por informarse bien y leer las etiquetas antes de aplicar cualquier producto en nuestra piel.</p>
+        <section id="opinion">
+            <div class="section-tag">Sección 06</div>
+            <h2 class="section-title">Artículo de opinión</h2>
+            <div class="card-box">
+                <h3 style="color:var(--navy-dark); margin-bottom:10px;">Prevenir también es aprender</h3>
+                <p>En una ciudad como Guayaquil, prevenir picaduras de mosquitos no es solo una precaución opcional, sino un hábito de salud fundamental. Entender lo que aplicamos en nuestra piel nos permite cuidarnos de forma inteligente y segura.</p>
+            </div>
         </section>
 
         <!-- Sección 07: Conclusiones -->
-        <section class="card">
-            <h3>Sección 07 · ¿Qué aprendimos?</h3>
-            <ol>
-                <li>Un repelente bien elegido es una herramienta de prevención real.</li>
-                <li>Leer la etiqueta antes de usarlo es indispensable para evitar reacciones adversas.</li>
-                <li>La prevención combina el uso de repelente con eliminar criaderos de agua estancada.</li>
-                <li>Siempre debemos consultar fuentes oficiales (Ministerio de Salud Pública, OMS, CDC).</li>
-            </ol>
+        <section id="conclusiones">
+            <div class="section-tag">Sección 07</div>
+            <h2 class="section-title">Conclusiones</h2>
+            <div class="card-box">
+                <ol style="padding-left:20px;">
+                    <li>El repelente es una herramienta clave de prevención.</li>
+                    <li>Es obligatorio leer siempre la etiqueta antes de usarlo.</li>
+                    <li>Siempre debemos guiarnos por fuentes de salud oficiales.</li>
+                </ol>
+            </div>
         </section>
 
         <!-- Sección 08: Fuentes -->
-        <section id="fuentes" class="card">
-            <h3>Sección 08 · Fuentes consultadas</h3>
-            <ul>
-                <li>Ministerio de Salud Pública del Ecuador (MSP) - <em>salud.gob.ec</em></li>
-                <li>Organización Panamericana de la Salud (OPS / OMS) - <em>paho.org</em></li>
-                <li>Centros para el Control y la Prevención de Enfermedades (CDC) - <em>cdc.gov</em></li>
-                <li>Agencia de Protección Ambiental de EE. UU. (EPA) - <em>espanol.epa.gov</em></li>
-            </ul>
+        <section id="fuentes">
+            <div class="section-tag">Sección 08</div>
+            <h2 class="section-title">Fuentes consultadas</h2>
+            <div class="card-box">
+                <ul style="padding-left:20px;">
+                    <li>Ministerio de Salud Pública del Ecuador (MSP)</li>
+                    <li>Organización Panamericana de la Salud (OPS / OMS)</li>
+                    <li>Centros para el Control y la Prevención de Enfermedades (CDC)</li>
+                </ul>
+            </div>
         </section>
 
     </div>
 
+    <!-- Flecha flotante para volver arriba -->
+    <a href="#" class="scroll-top">↑</a>
+
     <footer>
         <p>Unidad Educativa de las Fuerzas Armadas · Liceo Naval de Guayaquil «Cmdte. Rafael Andrade Lalama»</p>
-        <p>Proyecto de investigación · 1ero Bravo · Proyecto 2do Trimestre</p>
+        <p>Proyecto de Investigación · 1ero Bravo · 21/10/2026</p>
     </footer>
 
     <script>
