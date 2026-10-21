@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -274,7 +275,7 @@
             display: block;
         }
 
-        /* Grid for Evidence */
+        /* Grid for Evidence (Con tus fotos reales) */
         .evidence-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -284,38 +285,78 @@
         .evidence-card {
             background: #ffffff;
             border: 1px solid var(--border-color);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .evidence-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
         .evidence-card img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--bg-light);
         }
 
         .evidence-info {
-            padding: 15px;
+            padding: 18px;
             text-align: center;
         }
 
         .evidence-info strong {
             display: block;
             color: var(--navy-dark);
-            font-size: 1rem;
-            margin-bottom: 4px;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
         }
 
         .evidence-info span {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: #64748b;
+        }
+
+        /* Conclusiones (Diseño de Tarjetas Elegantes) */
+        .conclusiones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .conclusion-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--accent-gold);
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .conclusion-number {
+            background: var(--navy-dark);
+            color: var(--accent-gold);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .conclusion-text {
+            font-size: 0.98rem;
+            color: #334155;
+            line-height: 1.6;
         }
 
         /* Product Cards */
@@ -509,40 +550,40 @@
             </ul>
         </section>
 
-        <!-- Sección 04: Evidencias -->
+        <!-- Sección 04: Evidencias (Fotos Reales Enviadas) -->
         <section id="evidencias">
             <div class="section-tag">Sección 04</div>
             <h2 class="section-title">Evidencias del proyecto</h2>
             <div class="evidence-grid">
                 <div class="evidence-card">
-                    <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500&auto=format&fit=crop" alt="Investigación">
+                    <img src="https://i.ibb.co/3ykC6Yn/image-dc2c30.png" alt="Investigación">
                     <div class="evidence-info">
                         <strong>1. Investigación</strong>
-                        <span>Extracción e investigación de componentes naturales.</span>
+                        <span>Selección e investigación de extractos naturales y esencias repelentes.</span>
                     </div>
                 </div>
 
                 <div class="evidence-card">
-                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&auto=format&fit=crop" alt="Análisis">
+                    <img src="https://i.ibb.co/fQfK3tX/image-dc2fb6.png" alt="Análisis">
                     <div class="evidence-info">
                         <strong>2. Análisis</strong>
-                        <span>Comparación de etiquetas y registros sanitarios.</span>
+                        <span>Comparación de frascos comerciales, pulverizadores e ingredientes.</span>
                     </div>
                 </div>
 
                 <div class="evidence-card">
-                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500&auto=format&fit=crop" alt="Elaboración">
+                    <img src="https://i.ibb.co/L6V8wJ2/image-dc3775.png" alt="Elaboración">
                     <div class="evidence-info">
                         <strong>3. Elaboración</strong>
-                        <span>Proceso experimental y desarrollo del producto.</span>
+                        <span>Mezcla y preparación técnica en laboratorio.</span>
                     </div>
                 </div>
 
                 <div class="evidence-card">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&auto=format&fit=crop" alt="Socialización">
+                    <img src="https://i.ibb.co/tBchQ9g/image-dc3a40.png" alt="Socialización">
                     <div class="evidence-info">
                         <strong>4. Socialización</strong>
-                        <span>Exposición del estand y presentación del trabajo.</span>
+                        <span>Exposición del tríptico y periódico mural informativo.</span>
                     </div>
                 </div>
             </div>
@@ -577,15 +618,31 @@
             <p>En Guayaquil, las condiciones climáticas hacen inevitable la presencia de mosquitos. Usar repelente no es una moda, es una necesidad de salud pública. Aprender a elegir el producto correcto y aplicarlo con responsabilidad demuestra compromiso con nuestro bienestar y el de nuestra familia.</p>
         </section>
 
-        <!-- Sección 07: Conclusiones -->
+        <!-- Sección 07: Conclusiones (Tarjetas Modernas) -->
         <section id="conclusiones">
             <div class="section-tag">Sección 07</div>
-            <h2 class="section-title">Conclusiones</h2>
-            <ol>
-                <li>Un repelente bien utilizado es una herramienta de prevención sumamente efectiva.</li>
-                <li>Es fundamental revisar el registro sanitario e ingredientes antes de cualquier aplicación.</li>
-                <li>La prevención activa debe complementarse eliminando recipientes con agua estancada.</li>
-            </ol>
+            <h2 class="section-title">Conclusiones del proyecto</h2>
+            <div class="conclusiones-grid">
+                <div class="conclusion-card">
+                    <div class="conclusion-number">1</div>
+                    <div class="conclusion-text">Un repelente de mosquitos bien elegido y aplicado de forma responsable es una herramienta de prevención sumamente efectiva para la salud.</div>
+                </div>
+
+                <div class="conclusion-card">
+                    <div class="conclusion-number">2</div>
+                    <div class="conclusion-text">Es indispensable verificar siempre el registro sanitario y las instrucciones de la etiqueta antes de aplicar cualquier producto sobre la piel.</div>
+                </div>
+
+                <div class="conclusion-card">
+                    <div class="conclusion-number">3</div>
+                    <div class="conclusion-text">La prevención activa con repelente debe complementarse obligatoriamente con la eliminación de recipientes de agua estancada en el hogar y colegio.</div>
+                </div>
+
+                <div class="conclusion-card">
+                    <div class="conclusion-number">4</div>
+                    <div class="conclusion-text">Consultar siempre fuentes oficiales como el Ministerio de Salud Pública garantiza tomar decisiones informadas y seguras contra vectores como el dengue.</div>
+                </div>
+            </div>
         </section>
 
         <!-- Sección 08: Fuentes -->
